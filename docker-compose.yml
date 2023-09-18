@@ -1,0 +1,11 @@
+version: "3"
+services:
+  postgres:
+    container_name: qa-db
+    image: postgres:${POSTGRES_VERSION:-15.2}
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-qa}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      - "5432:5432"
